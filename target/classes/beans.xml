@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    将java类对象托管给spring容器:-->
+<!--    问题：id: spring容器中bean的id值: name: spring客 器中的bean的name值:一般.二选一 即可 :-->
+<!--    class:托管给spring容器的java类的包路径名
+        scope:指定spring容器中的bean的声明周期:常用的值: singleton :单例模式;protorype: 非单例模式;
+还有:application. session. request. websocket
+
+-->
+<!--    &ndash;&gt;-->
+    <bean name="student01" class="com.zlk.test.Student" scope="prototype">
+        <property name="name" value="张三"></property>
+        <property name="age" value="20"></property>
+        <property name="pwd" value="152425"></property>
+        <property name="teacher" ref="teacher01"></property>
+    </bean>
+<!--    <bean id="student01" name="student01" class="com.zlk.test.Student" scope="prototype"></bean>-->
+    <bean name="student02" class="com.zlk.test.Student" scope="prototype">
+        <constructor-arg value="张三"></constructor-arg>
+        <constructor-arg value="123456"></constructor-arg>
+        <constructor-arg value="20"></constructor-arg>
+        <constructor-arg ref="teacher01"></constructor-arg>
+<!--        <property name="name" value="张三"></property>-->
+<!--        <property name="age" value="20"></property>-->
+<!--        <property name="pwd" value="152425"></property>-->
+    </bean>
+    <bean name="teacher01" class="com.zlk.test.Teacher" scope="prototype">
+        <property name="tname" value="李四"></property>
+        <property name="tage" value="40"></property>
+    </bean>
+</beans>
