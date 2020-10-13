@@ -21,7 +21,7 @@
     <!--Spring版本号-->
       <Spring.version>5.1.5.RELEASE</Spring.version>
     <!--Junit版本号-->
-      <Junit.version>4.11</Junit.version>
+      <Junit.version>4.13.1</Junit.version>
   </properties>
 
   <dependencies>
